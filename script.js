@@ -32,15 +32,19 @@ btnRoll.addEventListener("click", (e) => {
         if (randomDice == 1){
             player0.classList.remove("player--active");
             player1.classList.add("player--active");
+            currentPlayer0.innerHTML = 0;
             activePlayer = 1;
         }
+        currentScore = 0;
     }  else if (activePlayer == 1){
         currentPlayer1.innerHTML = currentScore;
         if (randomDice == 1 ) {
             player1.classList.remove("player--active");
             player0.classList.add("player--active");
+            currentPlayer1.innerHTML = 0;
             activePlayer = 0;
         }
+        currentScore = 0;
     } 
     
     
