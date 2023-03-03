@@ -34,8 +34,8 @@ btnRoll.addEventListener("click", (e) => {
             player1.classList.add("player--active");
             currentPlayer0.innerHTML = 0;
             activePlayer = 1;
+            currentScore = 0;
         }
-        currentScore = 0;
     }  else if (activePlayer == 1){
         currentPlayer1.innerHTML = currentScore;
         if (randomDice == 1 ) {
@@ -43,8 +43,8 @@ btnRoll.addEventListener("click", (e) => {
             player0.classList.add("player--active");
             currentPlayer1.innerHTML = 0;
             activePlayer = 0;
+            currentScore = 0;
         }
-        currentScore = 0;
     } 
     
     
@@ -54,12 +54,16 @@ btnRoll.addEventListener("click", (e) => {
 btnHold.addEventListener("click", () => {
     if (activePlayer == 0){
         scorePlayer0.innerHTML = parseInt(scorePlayer0.innerHTML) + parseInt(currentPlayer0.innerHTML) ;
+        currentPlayer0.innerHTML = 0;
+        currentScore = 0;
         activePlayer = 1;
         player0.classList.remove("player--active");
         player1.classList.add("player--active");
         console.log(scorePlayer0.innerHTML);
     } else {
         scorePlayer1.innerHTML = parseInt(scorePlayer1.innerHTML) + parseInt(currentPlayer1.innerHTML) ;
+        currentPlayer1.innerHTML = 0;
+        currentScore = 0;
         activePlayer = 0;
         player1.classList.remove("player--active");
         player0.classList.add("player--active");
